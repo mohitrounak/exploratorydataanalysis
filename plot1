@@ -2,7 +2,7 @@ dataFile <- "./data/consumption.txt"
 data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 subSetData <- data[data$Date %in% c("16/12/2006","26/11/2010") ,]
 #str(subSetData)
-globalActivePower <- as.numeric(subSetData$Global_active_power)
+globalActivePower <- as.numeric(subSetData$Global_power)
 png("plot1.png", width=480, height=480)
-hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+hist(globalActivePower, col="red", main="Global Power", xlab="Global Power (kW)")
 dev.off()
